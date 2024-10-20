@@ -85,8 +85,8 @@ properties:
     description: GitHub repository visibility.
     default: private
     enum:
-    - public
-    - private
+      - public
+      - private
 
   lifecycle:
     type: string
