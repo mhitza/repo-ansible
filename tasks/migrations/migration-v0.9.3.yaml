@@ -1,3 +1,0 @@
-- ansible.builtin.file:
-    path: "{{ repo_path + '/.yamllint.yaml' }}"
-    state: absent

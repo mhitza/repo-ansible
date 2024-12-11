@@ -1,0 +1,10 @@
+- name: remove configuration files ported in reviewdog container
+  ansible.builtin.file:
+    path: "{{ repo_path }}/{{ item }}"
+    state: absent
+  loop:
+    - .twigcs.yaml
+    - .yamllint.yaml
+    - .reviewdog.yaml
+    - php-cs-fixer.dist.php
+    - phpstan.neon

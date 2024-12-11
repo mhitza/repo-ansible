@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# TODO add in at a later time
+#fix          - automatically fix coding style when possible (WILL ATTEMPT TO FIX ALL FILES, NOT ONLY THOSE CHANGED)
+
 help=$(cat <<'EOQ'
 all          - run checks for all files (DEFAULT)
-fix          - automatically fix coding style when possible (WILL ATTEMPT TO FIX ALL FILES, NOT ONLY THOSE CHANGED)
 pull-request - run checks for the latest changes (based on diff and pull request branch) - for CI use
 ...          - all other unknown arguments are passed to reviewdog
 EOQ
@@ -23,5 +25,6 @@ for arg in "$@"; do
     fi
 done
 
-echo Running reviewdog $reviewdog_args
+reviewdog_args="$reviewdog_args"
+echo reviewdog $reviewdog_args >&2
 exec reviewdog $reviewdog_args
